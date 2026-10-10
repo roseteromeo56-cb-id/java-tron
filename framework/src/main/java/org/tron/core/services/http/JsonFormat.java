@@ -816,7 +816,7 @@ public class JsonFormat {
     if (ch < 0x10) {
       return "\\u000" + Integer.toHexString(ch);
     } else if (ch < 0x100) {
-      return "\\u00" + Integer.toHexString(ch);
+      return "\\u00" + String.format( "%02X", ch );
     } else if (ch < 0x1000) {
       return "\\u0" + Integer.toHexString(ch);
     }
