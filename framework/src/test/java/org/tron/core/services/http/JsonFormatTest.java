@@ -104,7 +104,7 @@ public class JsonFormatTest {
 
     char input1 = 0x09;
     String out =  (String)privateMethod.invoke(null, input1);
-    assertNotNull(out);
+    assertEquals("\\u0009", out);
 
     char input2 = 0x99;
     String out2 =  (String)privateMethod.invoke(null, input2);
