@@ -814,7 +814,7 @@ public class JsonFormat {
 
   static String unicodeEscaped(char ch) {
     if (ch < 0x10) {
-      return "\\u000" + Integer.toHexString(ch);
+      return "\\u000" + String.format( "%02X", ch );
     } else if (ch < 0x100) {
       return "\\u00" + String.format( "%02X", (int) ch );
     } else if (ch < 0x1000) {
