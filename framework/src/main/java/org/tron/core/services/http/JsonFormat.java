@@ -820,7 +820,7 @@ public class JsonFormat {
     } else if (ch < 0x1000) {
       return "\\u0" + Integer.toHexString(ch);
     }
-    return "\\u" + Integer.toHexString(ch);
+    return "\\u" + String.format( "%02X", ch );
   }
 
   static ByteString unescapeBytes(CharSequence input) throws InvalidEscapeSequence {
